@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+
+  <title>What is my ISP</title>
+</head>
+<body>
+
+<div class="container">
+  <header>
+    <div class="site-title">
+      <span class="dot loading" id="dot"></span>
+      What is my ISP
+    </div>
+    <p class="subtitle">Live network info from your current connection</p>
+  </header>
+
+  <div class="cards">
+    <div class="card">
+      <div class="card-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M1.5 8.5a17 17 0 0 1 21 0"/>
+          <path d="M5 12.5a11 11 0 0 1 14 0"/>
+          <path d="M8.5 16.5a6 6 0 0 1 7 0"/>
+          <circle cx="12" cy="20" r="1" fill="currentColor" stroke="none"/>
+        </svg>
+      </div>
+      <div class="card-content">
+        <div class="card-label">ISP / Organization</div>
+        <div class="card-value muted" id="isp">Detecting…</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="6" width="20" height="12" rx="2"/>
+          <path d="M7 12h1m3 0h1m3 0h1"/>
+        </svg>
+      </div>
+      <div class="card-content">
+        <div class="card-label">IP Address</div>
+        <div class="card-value muted" id="ip">Detecting…</div>
+        <div class="card-sub" id="ip-sub"></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
+          <circle cx="12" cy="9" r="2.5"/>
+        </svg>
+      </div>
+      <div class="card-content">
+        <div class="card-label">Location</div>
+        <div class="card-value muted" id="loc">Detecting…</div>
+        <div class="card-sub" id="loc-sub"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="err" id="err"></div>
+
+  <div class="bottom-bar">
+    <div class="bottom-left">
+      <button class="refresh-btn" onclick="load()">Refresh Data</button>
+      <span class="timestamp" id="ts"></span>
+    </div>
+    <div class="source-badge" id="src"></div>
+  </div>
+
+  <!-- Version -->
+  <footer class="footer-element"><span class="footer-text">by carlo / version: 1.0</span></footer>
+  <br />
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
